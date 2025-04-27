@@ -1,0 +1,404 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=0.25)
+mdb.models['Model-1'].sketches['__profile__'].sketchOptions.setValues(
+    decimalPlaces=3)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-0.02, 0.015), 
+    point2=(0.02, -0.015))
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -0.0353073254227638, -0.00234755873680115), value=0.04, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    0.00886256247758865, 0.0303760208189487), value=0.04, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(0.04, 0.03))
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -0.0165815800428391, 0.0127337425947189), value=0.04, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    0.0224423035979271, 0.0346443094313145), value=0.04, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Hingle-hole', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Hingle-hole'].BaseSolidExtrude(depth=0.04, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.003, name='__profile__', 
+    sheetSize=0.138, transform=
+    mdb.models['Model-1'].parts['Hingle-hole'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['Hingle-hole'].faces[4], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-1'].parts['Hingle-hole'].edges[10], 
+    sketchOrientation=RIGHT, origin=(0.02, 0.01, 0.04)))
+mdb.models['Model-1'].sketches['__profile__'].sketchOptions.setValues(
+    decimalPlaces=3)
+mdb.models['Model-1'].parts['Hingle-hole'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.039, 0.021), 
+    point2=(0.02, 0.02))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.02, 0.02), point2=
+    (0.02, -0.02))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.02, -0.02), 
+    point2=(0.0419999999497086, -0.02))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    0.0329756645858288, 0.024901292771101), value=0.02, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    0.0357525146007538, -0.0271359369903803), value=0.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5])
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    0.0372554606199265, -0.0284958616644144), value=0.02, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].Arc3Points(point1=(0.04, 0.02), 
+    point2=(0.04, -0.02), point3=(0.054, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].TangentConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.03975, 0.0), point1=(0.039, 0.006))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10], radius=0.01, 
+    textPoint=(0.0441164022684097, 0.00835780568420887))
+mdb.models['Model-1'].parts['Hingle-hole'].SolidExtrude(depth=0.02, 
+    flipExtrudeDirection=ON, sketch=
+    mdb.models['Model-1'].sketches['__profile__'], sketchOrientation=RIGHT, 
+    sketchPlane=mdb.models['Model-1'].parts['Hingle-hole'].faces[4], 
+    sketchPlaneSide=SIDE1, sketchUpEdge=
+    mdb.models['Model-1'].parts['Hingle-hole'].edges[10])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['Hingle-hole'].features['Solid extrude-2'].setValues(
+    keepInternalBoundaries=True)
+mdb.models['Model-1'].parts['Hingle-hole'].regenerate()
+mdb.models['Model-1'].parts['Hingle-hole'].regenerate()
+mdb.models['Model-1'].parts['Hingle-hole'].DatumPointByEdgeParam(edge=
+    mdb.models['Model-1'].parts['Hingle-hole'].edges[9], parameter=0.25)
+mdb.models['Model-1'].parts['Hingle-hole'].DatumAxisByTwoPoint(point1=
+    mdb.models['Model-1'].parts['Hingle-hole'].datums[3], point2=
+    mdb.models['Model-1'].parts['Hingle-hole'].InterestingPoint(
+    mdb.models['Model-1'].parts['Hingle-hole'].edges[9], CENTER))
+mdb.models['Model-1'].parts['Hingle-hole'].DatumPlaneByPointNormal(normal=
+    mdb.models['Model-1'].parts['Hingle-hole'].datums[4], point=
+    mdb.models['Model-1'].parts['Hingle-hole'].datums[3])
+mdb.models['Model-1'].parts['Hingle-hole'].DatumPointByEdgeParam(edge=
+    mdb.models['Model-1'].parts['Hingle-hole'].edges[8], parameter=0.75)
+mdb.models['Model-1'].parts['Hingle-hole'].DatumPointByMidPoint(point1=
+    mdb.models['Model-1'].parts['Hingle-hole'].datums[3], point2=
+    mdb.models['Model-1'].parts['Hingle-hole'].datums[6])
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.007, name='__profile__', 
+    sheetSize=0.296, transform=
+    mdb.models['Model-1'].parts['Hingle-hole'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['Hingle-hole'].datums[5], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-1'].parts['Hingle-hole'].edges[21], 
+    sketchOrientation=RIGHT, origin=(0.044142, -0.034142, 0.02)))
+mdb.models['Model-1'].sketches['__profile__'].sketchOptions.setValues(
+    decimalPlaces=3)
+mdb.models['Model-1'].parts['Hingle-hole'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    -0.014142135623731, -0.01), point1=(-0.0175, -0.00875))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], radius=0.003, 
+    textPoint=(-0.0232411698584036, -0.00522454783320427))
+mdb.models['Model-1'].parts['Hingle-hole'].CutExtrude(flipExtrudeDirection=ON, 
+    sketch=mdb.models['Model-1'].sketches['__profile__'], sketchOrientation=
+    RIGHT, sketchPlane=mdb.models['Model-1'].parts['Hingle-hole'].datums[5], 
+    sketchPlaneSide=SIDE1, sketchUpEdge=
+    mdb.models['Model-1'].parts['Hingle-hole'].edges[21], upToFace=
+    mdb.models['Model-1'].parts['Hingle-hole'].faces[3])
+del mdb.models['Model-1'].sketches['__profile__']
+# Save by Evgeny on 2025_04_07-12.34.39; build 6.14-5 2015_08_18-18.37.49 135153
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].Material(name='Steel')
+mdb.models['Model-1'].materials['Steel'].Elastic(table=((209000000000.0, 0.3), 
+    ))
+mdb.models['Model-1'].HomogeneousSolidSection(material='Steel', name=
+    'SolidSection', thickness=1.0)
+mdb.models['Model-1'].parts['Hingle-hole'].Set(cells=
+    mdb.models['Model-1'].parts['Hingle-hole'].cells.getSequenceFromMask((
+    '[#3 ]', ), ), name='Set-1')
+mdb.models['Model-1'].parts['Hingle-hole'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Hingle-hole'].sets['Set-1'], sectionName=
+    'SolidSection', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].Part(name='Hingle-hole-Copy', objectToCopy=
+    mdb.models['Model-1'].parts['Hingle-hole'])
+del mdb.models['Model-1'].parts['Hingle-hole-Copy'].features['Cut extrude-1']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=0.25)
+mdb.models['Model-1'].sketches['__profile__'].sketchOptions.setValues(
+    decimalPlaces=3)
+mdb.models['Model-1'].sketches['__profile__'].ConstructionLine(point1=(0.0, 
+    -0.125), point2=(0.0, 0.125))
+mdb.models['Model-1'].sketches['__profile__'].FixedConstraint(entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.01, 0.03), point2=
+    (0.01, -0.0249999999534339))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].DistanceDimension(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], textPoint=(
+    0.00857667624950409, -0.0333638191223145), value=0.01)
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    0.0327343195676804, -0.00533536449074745), value=0.06, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].ConstructionLine(point1=(-0.04, 
+    0.0), point2=(0.0449999999627471, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].ConstructionLine(point1=(0.0, 
+    0.0), point2=(-0.0511741824448109, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].SymmetryConstraint(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], symmetryAxis=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Pin', type=
+    ANALYTIC_RIGID_SURFACE)
+mdb.models['Model-1'].parts['Pin'].AnalyticRigidSurfRevolve(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+# Save by Evgeny on 2025_04_07-13.34.50; build 6.14-5 2015_08_18-18.37.49 135153
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Pin'].ReferencePoint(point=
+    mdb.models['Model-1'].parts['Pin'].vertices[1])
+mdb.models['Model-1'].parts.changeKey(fromName='Hingle-hole-Copy', toName=
+    'Hingle-solid')
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Hingle-hole-1', 
+    part=mdb.models['Model-1'].parts['Hingle-hole'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Hingle-solid-1'
+    , part=mdb.models['Model-1'].parts['Hingle-solid'])
+mdb.models['Model-1'].rootAssembly.instances['Hingle-solid-1'].translate(
+    vector=(0.113456349186104, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.rotate(angle=180.0, axisDirection=(0.0, 1.0, 
+    0.0), axisPoint=(0.0, 0.0, 0.0), instanceList=('Hingle-solid-1', ))
+# Save by Evgeny on 2025_04_07-13.43.44; build 6.14-5 2015_08_18-18.37.49 135153
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(0.0, 0.0, 
+    1.0), axisPoint=(0.0, 0.0, 0.0), instanceList=('Hingle-solid-1', ))
+mdb.models['Model-1'].rootAssembly.rotate(angle=-90.0, axisDirection=(0.0, 0.0, 
+    1.0), axisPoint=(0.0, 0.0, 0.0), instanceList=('Hingle-hole-1', ))
+mdb.models['Model-1'].rootAssembly.CoincidentPoint(fixedPoint=
+    mdb.models['Model-1'].rootAssembly.instances['Hingle-solid-1'].vertices[5], 
+    movablePoint=
+    mdb.models['Model-1'].rootAssembly.instances['Hingle-hole-1'].vertices[4])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Pin-1', part=
+    mdb.models['Model-1'].parts['Pin'])
+mdb.models['Model-1'].rootAssembly.Coaxial(fixedAxis=
+    mdb.models['Model-1'].rootAssembly.instances['Pin-1'].faces[0], flip=OFF, 
+    movableAxis=
+    mdb.models['Model-1'].rootAssembly.instances['Hingle-hole-1'].faces[2])
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Pin-1', ), vector=(
+    0.01975, 0.153456, 0.07))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Pin-1', ), vector=(
+    0.0, 0.0, -0.1))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Pin-1', ), vector=(
+    0.0, 0.0, 0.02))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Pin-1', ), vector=(
+    0.0, 0.0, -0.01))
+mdb.models['Model-1'].StaticStep(description='Establish conntact', initialInc=
+    0.1, name='Conntact', previous='Initial')
+mdb.models['Model-1'].StaticStep(description='Apply load', initialInc=0.1, 
+    name='Load', previous='Conntact')
+del mdb.models['Model-1'].fieldOutputRequests['F-Output-1']
+mdb.models['Model-1'].FieldOutputRequest(createStepName='Conntact', frequency=
+    LAST_INCREMENT, name='F-Output-1', variables=PRESELECT)
+mdb.models['Model-1'].FieldOutputRequest(createStepName='Load', name=
+    'F-Output-2', variables=PRESELECT)
+mdb.models['Model-1'].HomogeneousSolidSection(material='Steel', name=
+    'Section-2', thickness=None)
+mdb.models['Model-1'].rootAssembly.Set(name='Monitoring', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Hingle-solid-1'].vertices.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-1'].steps['Conntact'].Monitor(dof=1, frequency=1, node=
+    mdb.models['Model-1'].rootAssembly.sets['Monitoring'])
+mdb.models['Model-1'].rootAssembly.Surface(name='Pin', side1Faces=
+    mdb.models['Model-1'].rootAssembly.instances['Pin-1'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='Flange-h', side1Faces=
+    mdb.models['Model-1'].rootAssembly.instances['Hingle-hole-1'].faces.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='inside-h', side1Faces=
+    mdb.models['Model-1'].rootAssembly.instances['Hingle-hole-1'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='flange-s', side1Faces=
+    mdb.models['Model-1'].rootAssembly.instances['Hingle-solid-1'].faces.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='inside-s', side1Faces=
+    mdb.models['Model-1'].rootAssembly.instances['Hingle-solid-1'].faces.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-1'].ContactProperty('NoFric')
+mdb.models['Model-1'].interactionProperties['NoFric'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+# Save by Evgeny on 2025_04_07-14.34.02; build 6.14-5 2015_08_18-18.37.49 135153
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Initial', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='NoFric', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['Pin'], name='HingePin-Hole', 
+    slave=mdb.models['Model-1'].rootAssembly.surfaces['inside-h'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Initial', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='NoFric', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['Pin'], name='hingePin-solid', 
+    slave=mdb.models['Model-1'].rootAssembly.surfaces['inside-s'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Initial', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='NoFric', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['Flange-h'], name='Flange', 
+    slave=mdb.models['Model-1'].rootAssembly.surfaces['flange-s'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].EncastreBC(createStepName='Initial', localCsys=None, 
+    name='Fixed', region=Region(
+    edges=mdb.models['Model-1'].rootAssembly.instances['Hingle-hole-1'].edges.getSequenceFromMask(
+    mask=('[#7400000 ]', ), )))
+del mdb.models['Model-1'].boundaryConditions['Fixed']
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='Fixed', 
+    region=Region(
+    edges=mdb.models['Model-1'].rootAssembly.instances['Hingle-hole-1'].edges.getSequenceFromMask(
+    mask=('[#7400000 ]', ), )), u1=SET, u2=SET, u3=SET, ur1=UNSET, ur2=UNSET, 
+    ur3=UNSET)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='Noslip', 
+    region=Region(referencePoints=(
+    mdb.models['Model-1'].rootAssembly.instances['Pin-1'].referencePoints[2], 
+    )), u1=UNSET, u2=SET, u3=SET, ur1=SET, ur2=UNSET, ur3=SET)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='Constrain', 
+    region=Region(
+    vertices=mdb.models['Model-1'].rootAssembly.instances['Hingle-solid-1'].vertices.getSequenceFromMask(
+    mask=('[#800 ]', ), )), u1=SET, u2=SET, u3=SET, ur1=UNSET, ur2=UNSET, ur3=
+    UNSET)
+mdb.models['Model-1'].Pressure(amplitude=UNSET, createStepName='Load', 
+    distributionType=UNIFORM, field='', magnitude=-1000000.0, name='Pressure', 
+    region=Region(
+    side1Faces=mdb.models['Model-1'].rootAssembly.instances['Hingle-solid-1'].faces.getSequenceFromMask(
+    mask=('[#100 ]', ), )))
+# Save by Evgeny on 2025_04_07-14.50.12; build 6.14-5 2015_08_18-18.37.49 135153
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Hingle-hole'].DatumPlaneByThreePoints(point1=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[5], point2=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[6], point3=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[7])
+mdb.models['Model-1'].parts['Hingle-hole'].DatumPlaneByThreePoints(point1=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[7], point2=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[6], point3=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[5])
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['Hingle-hole'].DatumPlaneByThreePoints(point1=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[6], point2=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[5], point3=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[7])
+mdb.models['Model-1'].parts['Hingle-hole'].DatumPlaneByThreePoints(point1=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[7], point2=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[5], point3=
+    mdb.models['Model-1'].parts['Hingle-hole'].vertices[6])
+mdb.models['Model-1'].parts['Hingle-hole'].PartitionCellByDatumPlane(cells=
+    mdb.models['Model-1'].parts['Hingle-hole'].cells.getSequenceFromMask((
+    '[#2 ]', ), ), datumPlane=
+    mdb.models['Model-1'].parts['Hingle-hole'].datums[13])
+# Save by Evgeny on 2025_04_07-14.58.38; build 6.14-5 2015_08_18-18.37.49 135153
+# Save by Evgeny on 2025_04_07-14.58.41; build 6.14-5 2015_08_18-18.37.49 135153
